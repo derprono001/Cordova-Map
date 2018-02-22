@@ -108,37 +108,3 @@
     </script>
   </body>
 </html>
-
-<?php
-$username="t6ngtr00";
-$password="gR5bhCd8ZnNkSpKE";
-$database="opisk_t6ngtr00";
-
-
-// Opens a connection to a MySQL server.
-$connection=mysqli_connect ("mysli.oamk.fi", $username, $password, "opisk_t6ngtr00");
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-
-				$sql2 = "SELECT * FROM markers3";
-					$result2 = mysqli_query($connection, $sql2);
-
-					if (mysqli_num_rows($result2) > 0)
-					{
-					    // output data of each row
-					    while($markers = mysqli_fetch_assoc($result2))
-				 { echo $markers["name"].".......".$markers["address"]." says: "."<br>"."<div class=\"\" id=\"commentbox\">". $markers["type"]."</div>"."<br>";}
-			 }
-				     ?>
-<?php
-	    }
-	}
-	else
-	{
-	    echo "0 results";
-	}
-
-	mysqli_close($connection);
-?>
